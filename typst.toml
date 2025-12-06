@@ -1,18 +1,13 @@
-# for a description of available keys, see https://github.com/typst/packages/?tab=readme-ov-file#package-format
-
 [package]
-name = ""
+name = "oxford-scholar"
 version = "0.1.0"
 entrypoint = "src/lib.typ"
-authors = []
+authors = ["Federico Celli <@fcelli>"]
 license = "Unlicense"
-description = ""
-homepage = ""
-repository = ""
-keywords = []
-categories = []
-disciplines = []
-# compiler = ""
+description = "Unofficial Oxford DPhil thesis template"
+repository = "https://github.com/fcelli/oxford-scholar"
+keywords = ["Oxford", "thesis", "DPhil", "PhD"]
+categories = ["thesis"]
 exclude = [
   ".github",
   "docs",
@@ -24,10 +19,7 @@ exclude = [
   "thumbnail-light.svg",
 ]
 
-# [template]
-# path = "template"
-# entrypoint = "main.typ"
+[template]
+path = "template"
+entrypoint = "main.typ"
 # thumbnail = "thumbnail.png"
-
-# [tool.mytool]
-# foo = "bar"

@@ -1,7 +1,7 @@
-# The `my-package` Package
+# oxford-scholar 
 <div align="center">Version 0.1.0</div>
 
-A short description about the project and/or client.
+Unofficial Typst template for an Oxford DPhil thesis.
 
 ## Template adaptation checklist
 
@@ -9,7 +9,7 @@ A short description about the project and/or client.
   - Change the `my-package` package name, including code snippets
   - Check section contents and/or delete sections that don't apply
 - [ ] Check and/or replace `LICENSE` by something that suits your needs
-- [ ] Fill out `typst.toml`
+- [x] Fill out `typst.toml`
   - See also the [typst/packages README](https://github.com/typst/packages/?tab=readme-ov-file#package-format)
 - [ ] Adapt Repository URLs in `CHANGELOG.md`
   - Consider only committing that file with your first release, or removing the "Initial Release" part in the beginning
