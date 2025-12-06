@@ -21,7 +21,7 @@ Unofficial Typst template for an Oxford DPhil thesis.
     - [ ] on this repo, create a secret `REGISTRY_TOKEN` (at `https://github.com/[user]/[repo]/settings/secrets/actions`) that contains the so created token
 
     if configured correctly, whenever you create a tag `v...`, your package will be pushed onto a branch on the `REGISTRY_REPO`, from which you can then create a pull request against [typst/packages](https://github.com/typst/packages/)
-- [ ] remove/replace the example test case
+- [x] remove/replace the example test case
 - [ ] (add your actual code, docs and tests)
 - [ ] remove this section from the README
 
