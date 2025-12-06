@@ -43,11 +43,13 @@
   counter(page).update(1)
 
   // Table of contents
-  outline(
-    title: "Contents",
-    indent: auto,
-    depth: 3,
-  )
+  if meta.show-toc {
+    outline(
+      title: "Contents",
+      indent: 2em,
+      depth: 3,
+    )
+  }
 
   // ============== Main body ==============
   // Page numbering

@@ -34,7 +34,7 @@
   ]
   v(2.5cm)
   if meta.logo != none {
-    figure(image(meta.logo))
+    figure(meta.logo)
     v(2cm)
   }
   block[

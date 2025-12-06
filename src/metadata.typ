@@ -4,7 +4,8 @@
   college: none,
   degree: "Doctor of Philosophy",
   submission-term: none,
-  logo: "./assets/crest.pdf",
+  logo: none,
+  show-toc: true,
 )
 
 #let normalize-meta(meta) = {

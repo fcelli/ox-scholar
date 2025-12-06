@@ -5,6 +5,8 @@
   author: "Author",
   college: "College",
   submission-term: "Submission Term, Year",
+  logo: image("../../template/assets/crest.png"),
+  show-toc: false,
 )
 
 #show: thesis.with(meta: meta)
