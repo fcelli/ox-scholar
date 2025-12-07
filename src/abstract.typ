@@ -8,5 +8,5 @@
 
   body
 
-  pagebreak(to: "odd")
+  pagebreak(weak: true, to: "odd")
 }

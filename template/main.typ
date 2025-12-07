@@ -9,6 +9,10 @@
   abstract: include "content/abstract.typ",
   logo: image("assets/beltcrest.png", width: 4.5cm),
   show-toc: true,
+  bib: bibliography(
+    "content/bibliography.bib",
+    title: "References",
+  ),
 )
 
 #show: thesis.with(meta: meta)

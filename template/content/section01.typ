@@ -1,7 +1,8 @@
 = Section Title
 
 == Subsection Title
-#lorem(30)
+#lorem(30) \
+Example citation @article1.
 
-== Subsection Title
+=== Subsection Title
 #lorem(20)

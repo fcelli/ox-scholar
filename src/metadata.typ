@@ -1,12 +1,13 @@
 #let default-meta = (
-  title: "Thesis Title",
-  author: "Author",
+  title: none,
+  author: none,
   college: none,
   degree: "Doctor of Philosophy",
   submission-term: none,
   abstract: none,
   logo: none,
   show-toc: true,
+  bib: none,
 )
 
 #let normalize-meta(meta) = {

@@ -1,2 +1,3 @@
 = Section Title
-#lorem(50)
+#lorem(50) \
+Example citation @article2.

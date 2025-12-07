@@ -1,6 +1,7 @@
 #import "./metadata.typ": normalize-meta
 #import "./title.typ": title-page
 #import "./abstract.typ": abstract-page
+#import "./bibliography.typ": bibliography-page
 
 #let thesis(
   meta: (),
@@ -108,4 +109,9 @@
   counter(page).update(1)
 
   body
+
+  // ============ Bibliography =============
+  if meta.bib != none {
+    bibliography-page(meta)
+  }
 }
