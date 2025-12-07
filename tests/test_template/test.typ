@@ -4,9 +4,10 @@
   title: "Thesis Title",
   author: "Author",
   college: "College",
+  degree: "Doctor of Philosophy",
   submission-term: "Submission Term, Year",
   abstract: include "../../template/content/abstract.typ",
-  logo: image("../../template/assets/crest.png"),
+  logo: image("../../template/assets/beltcrest.png", width: 4.5cm),
   show-toc: false,
 )
 
