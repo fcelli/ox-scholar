@@ -5,13 +5,12 @@
   author: "Author",
   college: "College",
   submission-term: "Submission Term, Year",
+  abstract: include "../../template/content/abstract.typ",
   logo: image("../../template/assets/crest.png"),
   show-toc: false,
 )
 
 #show: thesis.with(meta: meta)
 
-= Heading 1
-== Heading 2
-=== Heading 3
-#lorem(100)
+#include "../../template/content/section01.typ"
+#include "../../template/content/section02.typ"

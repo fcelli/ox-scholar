@@ -12,7 +12,7 @@
       top: 2.7cm,
       right: 3.1cm,
       bottom: 2.1cm,
-    )
+    ),
   )
 
   set text(
