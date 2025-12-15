@@ -24,7 +24,17 @@
   ]
 
   // Title page style settings
-  set page(numbering: none)
+  set page(
+    margin: (
+      left: 3.1cm,
+      top: 2.7cm,
+      right: 3.1cm,
+      bottom: 2.1cm,
+    ),
+    numbering: none,
+    header: none,
+    footer: none,
+  )
   set text(size: font-size)
   set par(leading: line-spacing)
   set align(center)
