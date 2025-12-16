@@ -1,71 +1,77 @@
 # oxford-scholar
+[![Tests](https://github.com/fcelli/oxford-scholar/actions/workflows/tests.yml/badge.svg)](https://github.com/fcelli/oxford-scholar/actions/workflows/tests.yml)
 [![Repo](https://img.shields.io/badge/GitHub-repo-blue)](https://github.com/fcelli/oxford-scholar)
 [![License: MIT](https://img.shields.io/badge/License-MIT-success.svg)](https://opensource.org/licenses/MIT)
 <div align="center">Version 0.1.0</div><br/>
 
 Unofficial Typst template for an Oxford DPhil thesis.
 
-## Template adaptation checklist
-
-- [ ] Fill out `README.md`
-  - Change the `my-package` package name, including code snippets
-  - Check section contents and/or delete sections that don't apply
-- [x] Check and/or replace `LICENSE` by something that suits your needs
-- [x] Fill out `typst.toml`
-  - See also the [typst/packages README](https://github.com/typst/packages/?tab=readme-ov-file#package-format)
-- [x] Adapt Repository URLs in `CHANGELOG.md`
-  - Consider only committing that file with your first release, or removing the "Initial Release" part in the beginning
-- [ ] Adapt or deactivate the release workflow in `.github/workflows/release.yml`
-  - to deactivate it, delete that file or remove/comment out lines 2-4 (`on:` and following)
-  - to use the workflow
-    - [ ] check the values under `env:`, particularly `REGISTRY_REPO`
-    - [ ] if you don't have one, [create a fine-grained personal access token](https://github.com/settings/tokens?type=beta) with [only Contents permission](https://stackoverflow.com/a/75116350/371191) for the `REGISTRY_REPO`
-    - [ ] on this repo, create a secret `REGISTRY_TOKEN` (at `https://github.com/[user]/[repo]/settings/secrets/actions`) that contains the so created token
-
-    if configured correctly, whenever you create a tag `v...`, your package will be pushed onto a branch on the `REGISTRY_REPO`, from which you can then create a pull request against [typst/packages](https://github.com/typst/packages/)
-- [x] remove/replace the example test case
-- [ ] (add your actual code, docs and tests)
-- [ ] remove this section from the README
-
 ## Getting Started
+To get started with Typst, please refer to the official [installation guide](https://github.com/typst/typst?tab=readme-ov-file#installation).
 
-These instructions will get you a copy of the project up and running on the typst web app. Perhaps a short code example on importing the package and a very simple teaser usage.
+Once the Typst CLI is installed on your system, you can set up a new project using this template:
+```shell
+typst init @preview/oxford-scholar:0.1.0
+```
 
+The template includes a pre-filled example demonstrating the basic layout. You can compile it to PDF with:
+```shell
+typst compile main.typ
+```
+
+For live preview while editing:
+```shell
+typst watch main.typ
+```
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./thumbnail-dark.svg">
+    <img src="./thumbnail-light.svg" style="width: 500px; height: auto;">
+  </picture>
+</p>
+
+### Thesis Function Documentation
+The template provides a `thesis()` function that generates the thesis layout. You can configure it with your title, author, and other optional parameters.
+- `title`: The full title of the thesis.
+- `author`: The author's full name.
+- `college`: The author's college.
+- `degree`: The degree being pursued. Defaults to "Doctor of Philosophy".
+- `submission-term`: The term and year of submission (e.g., “Trinity Term, 2025”).
+- `acknowledgements`: Optional content for acknowledgements.
+- `abstract`: Optional content for the abstract section.
+- `logo`: Optional image for the university or college logo.
+- `show-toc`: Boolean to include the table of contents. Defaults to true.
+- `bib`: Optional bibliography.
+
+Example usage:
 ```typ
-#import "@preview/my-package:0.1.0": *
+#import "@preview/oxford-scholar:0.1.0": *
 
-#show: my-show-rule.with()
-#my-func()
+#show: thesis.with(
+  title: "Thesis Title",
+  author: "Author",
+  college: "College",
+  degree: "Doctor of Philosophy",
+  submission-term: "Submission Term, Year",
+  acknowledgements: include "content/acknowledgements.typ",
+  abstract: include "content/abstract.typ",
+  logo: image("assets/beltcrest.png", width: 4.5cm),
+  show-toc: true,
+  bib: bibliography(
+    "content/bibliography.bib",
+    title: "References",
+  ),
+)
+
+#include "content/section01.typ"
 ```
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./thumbnail-dark.svg">
-  <img src="./thumbnail-light.svg">
-</picture>
+## Disclaimer
+This template was developed after the submission of the author’s thesis. The author does not guarantee that a thesis prepared using this template will be accepted by the University of Oxford. However, the template is designed to conform to the University’s prescribed formatting and styling requirements.
 
-### Installation
+## Acknowledgements
+This template was heavily inspired by the [OxThesis](https://github.com/mcmanigle/OxThesis) LaTeX template, which served as a valuable reference in creating this Typst version.
 
-A step by step guide that will tell you how to get the development environment up and running. This should explain how to clone the repo and where to (maybe a link to the typst documentation on it), along with any pre-requisite software and installation steps.
-
-```
-$ First step
-$ Another step
-$ Final step
-```
-
-## Usage
-
-A more in-depth description of usage. Any template arguments? A complicated example that showcases most if not all of the functions the package provides? This is also an excellent place to signpost the manual.
-
-```typ
-#import "@preview/my-package:0.1.0": *
-
-#let my-complicated-example = ...
-```
-
-## Additional Documentation and Acknowledgments
-
-* Project folder on server:
-* Confluence link:
-* Asana board:
-* etc...
+## Contributions
+If you encounter any issues using the template, please open an issue on this repository. Contributions are also welcome - if you develop useful extensions or make improvements, we would be happy to accept pull requests.
