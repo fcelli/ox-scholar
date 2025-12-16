@@ -1,6 +1,9 @@
 #import "utils.typ": page-has-heading
 
-#let abstract-page(body) = {
+#let frontmatter-page(title: none, body) = {
+  // Validate inputs
+  assert(title != none, message: "Frontmatter page title must be provided")
+
   set page(
     header: none,
     footer: context {
@@ -16,7 +19,7 @@
     level: 1,
     numbering: none,
     outlined: false,
-    "Abstract",
+    title,
   )
 
   body

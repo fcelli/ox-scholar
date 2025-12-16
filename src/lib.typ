@@ -1,6 +1,6 @@
 #import "metadata.typ": normalize-meta
 #import "title.typ": title-page
-#import "abstract.typ": abstract-page
+#import "frontmatter.typ": frontmatter-page
 #import "bibliography.typ": bibliography-page
 #import "utils.typ": latest-heading, page-has-heading
 #import calc: even
@@ -123,9 +123,18 @@
   set page(numbering: "i")
   counter(page).update(1)
 
+  // Acknowledgements
+  if meta.acknowledgements != none {
+    frontmatter-page(title: "Acknowledgements")[
+      #meta.acknowledgements
+    ]
+  }
+
   // Abstract
   if meta.abstract != none {
-    abstract-page(meta.abstract)
+    frontmatter-page(title: "Abstract")[
+      #meta.abstract
+    ]
   }
 
   // Table of contents

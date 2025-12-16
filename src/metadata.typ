@@ -4,6 +4,7 @@
   college: none,
   degree: "Doctor of Philosophy",
   submission-term: none,
+  acknowledgements: none,
   abstract: none,
   logo: none,
   show-toc: true,

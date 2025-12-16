@@ -6,6 +6,7 @@
   college: "College",
   degree: "Doctor of Philosophy",
   submission-term: "Submission Term, Year",
+  acknowledgements: include "../../template/content/acknowledgements.typ",
   abstract: include "../../template/content/abstract.typ",
   logo: image("../../template/assets/beltcrest.png", width: 4.5cm),
   show-toc: false,
