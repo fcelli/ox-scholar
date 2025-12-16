@@ -1,5 +1,7 @@
-# oxford-scholar 
-<div align="center">Version 0.1.0</div>
+# oxford-scholar
+[![Repo](https://img.shields.io/badge/GitHub-repo-blue)](https://github.com/fcelli/oxford-scholar)
+[![License: MIT](https://img.shields.io/badge/License-MIT-success.svg)](https://opensource.org/licenses/MIT)
+<div align="center">Version 0.1.0</div><br/>
 
 Unofficial Typst template for an Oxford DPhil thesis.
 
@@ -8,7 +10,7 @@ Unofficial Typst template for an Oxford DPhil thesis.
 - [ ] Fill out `README.md`
   - Change the `my-package` package name, including code snippets
   - Check section contents and/or delete sections that don't apply
-- [ ] Check and/or replace `LICENSE` by something that suits your needs
+- [x] Check and/or replace `LICENSE` by something that suits your needs
 - [x] Fill out `typst.toml`
   - See also the [typst/packages README](https://github.com/typst/packages/?tab=readme-ov-file#package-format)
 - [x] Adapt Repository URLs in `CHANGELOG.md`
