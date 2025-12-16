@@ -117,6 +117,8 @@
 
   // ============== Title page ==============
   title-page(meta: meta)
+  // Skip a page after title
+  pagebreak(to: "odd")
 
   // ============== Frontmatter =============
   // Set latin page numbering

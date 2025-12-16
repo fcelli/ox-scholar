@@ -46,7 +46,4 @@
   }
   place(center + horizon, author-block, dy: 3.2cm)
   place(center + bottom, degree-block, dy: -3cm)
-
-  // Skip a page after title
-  pagebreak(to: "odd")
 }
