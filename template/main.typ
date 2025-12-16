@@ -1,6 +1,6 @@
 #import "@preview/oxford-scholar:0.1.0": *
 
-#let meta = (
+#show: thesis.with(
   title: "Thesis Title",
   author: "Author",
   college: "College",
@@ -16,7 +16,4 @@
   ),
 )
 
-#show: thesis.with(meta: meta)
-
 #include "content/section01.typ"
-#include "content/section02.typ"

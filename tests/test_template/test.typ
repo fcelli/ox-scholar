@@ -1,12 +1,12 @@
 #import "/src/lib.typ": *
 
-#let meta = (
+#show: thesis.with(
   title: "Thesis Title",
   author: "Author",
   college: "College",
   degree: "Doctor of Philosophy",
   submission-term: "Submission Term, Year",
-  acknowledgements: include "../../template/content/acknowledgements.typ",
+  acknowledgements: none,
   abstract: include "../../template/content/abstract.typ",
   logo: image("../../template/assets/beltcrest.png", width: 4.5cm),
   show-toc: false,
@@ -16,7 +16,4 @@
   ),
 )
 
-#show: thesis.with(meta: meta)
-
 #include "../../template/content/section01.typ"
-#include "../../template/content/section02.typ"

@@ -4,7 +4,7 @@
 #let theme = sys.inputs.at("theme", default: "light")
 #set text(white) if theme == "dark"
 
-#let meta = (
+#title-page(
   title: "Thesis Title",
   author: "Author",
   college: "College",
@@ -12,5 +12,3 @@
   submission-term: "Submission Term, Year",
   logo: image("../template/assets/beltcrest.png", width: 4.5cm),
 )
-
-#title-page(meta: meta)

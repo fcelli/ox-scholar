@@ -1,11 +1,11 @@
-#let bibliography-page(meta) = {
+#let bibliography-page(bib) = {
   set heading(
     numbering: none,
     outlined: true,
   )
   counter(heading).update(0)
 
-  meta.bib
+  bib
 
   pagebreak(weak: true, to: "odd")
 }

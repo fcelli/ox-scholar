@@ -1,4 +1,3 @@
-#import "metadata.typ": normalize-meta
 #import "title.typ": title-page
 #import "frontmatter.typ": frontmatter-page
 #import "bibliography.typ": bibliography-page
@@ -6,16 +5,26 @@
 #import calc: even
 
 #let thesis(
-  meta: (),
+  title: none,
+  author: none,
+  college: none,
+  degree: "Doctor of Philosophy",
+  submission-term: none,
+  acknowledgements: none,
+  abstract: none,
+  logo: none,
+  show-toc: true,
+  bib: none,
   body,
 ) = {
-  // Normalize metadata
-  let meta = normalize-meta(meta)
+  // Validate inputs
+  assert(title != none, message: "Thesis title must be provided")
+  assert(author != none, message: "Thesis author must be provided")
 
   // =========== Document settings ===========
   set document(
-    title: meta.title,
-    author: meta.author,
+    title: title,
+    author: author,
   )
 
   set page(
@@ -116,7 +125,14 @@
   }
 
   // ============== Title page ==============
-  title-page(meta: meta)
+  title-page(
+    title: title,
+    author: author,
+    college: college,
+    degree: degree,
+    submission-term: submission-term,
+    logo: logo,
+  )
   // Skip a page after title
   pagebreak(to: "odd")
 
@@ -126,21 +142,21 @@
   counter(page).update(1)
 
   // Acknowledgements
-  if meta.acknowledgements != none {
+  if acknowledgements != none {
     frontmatter-page(title: "Acknowledgements")[
-      #meta.acknowledgements
+      #acknowledgements
     ]
   }
 
   // Abstract
-  if meta.abstract != none {
+  if abstract != none {
     frontmatter-page(title: "Abstract")[
-      #meta.abstract
+      #abstract
     ]
   }
 
   // Table of contents
-  if meta.show-toc {
+  if show-toc {
     outline(
       title: "Contents",
       indent: 2em,
@@ -157,7 +173,7 @@
   body
 
   // ============ Bibliography =============
-  if meta.bib != none {
-    bibliography-page(meta)
+  if bib != none {
+    bibliography-page(bib)
   }
 }
