@@ -26,8 +26,7 @@ typst watch main.typ
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./thumbnail-dark.svg">
-    <img src="./thumbnail-light.svg" style="width: 500px; height: auto;">
+    <img src="thumbnail.png" style="width: 500px; height: auto;">
   </picture>
 </p>
 

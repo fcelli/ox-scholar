@@ -1,8 +1,4 @@
 #import "/src/lib.typ" as my-package: *
-#set page(fill: none)
-// style thumbnail for light and dark theme
-#let theme = sys.inputs.at("theme", default: "light")
-#set text(white) if theme == "dark"
 
 #title-page(
   title: "Thesis Title",
