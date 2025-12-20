@@ -1,8 +1,9 @@
 # ox-scholar
-[![Tests](https://github.com/fcelli/ox-scholar/actions/workflows/tests.yml/badge.svg)](https://github.com/fcelli/ox-scholar/actions/workflows/tests.yml)
+[![Typst Universe](https://img.shields.io/badge/dynamic/xml?url=https%3A%2F%2Ftypst.app%2Funiverse%2Fpackage%2Fox-scholar&query=%2Fhtml%2Fbody%2Fdiv%2Fmain%2Fdiv%5B2%5D%2Faside%2Fsection%5B2%5D%2Fdl%2Fdd%5B3%5D&label=universe&logo=typst&color=39cccc)](https://typst.app/universe/package/ox-scholar)
 [![Repo](https://img.shields.io/badge/GitHub-repo-blue)](https://github.com/fcelli/ox-scholar)
 [![License: MIT](https://img.shields.io/badge/License-MIT-success.svg)](https://opensource.org/licenses/MIT)
-<div align="center">Version 0.1.0</div><br/>
+![Release](https://img.shields.io/github/v/release/fcelli/ox-scholar)
+[![Tests](https://github.com/fcelli/ox-scholar/actions/workflows/tests.yml/badge.svg)](https://github.com/fcelli/ox-scholar/actions/workflows/tests.yml)
 
 Unofficial Typst template for an Oxford DPhil thesis.
 
@@ -11,7 +12,7 @@ To get started with Typst, please refer to the official [installation guide](htt
 
 Once the Typst CLI is installed on your system, you can set up a new project using this template:
 ```shell
-typst init @preview/ox-scholar:0.1.0
+typst init @preview/ox-scholar:0.1.1
 ```
 
 The template includes a pre-filled example demonstrating the basic layout. You can compile it to PDF with:
@@ -45,7 +46,7 @@ The template provides a `thesis()` function that generates the thesis layout. Yo
 
 Example usage:
 ```typ
-#import "@preview/ox-scholar:0.1.0": *
+#import "@preview/ox-scholar:0.1.1": *
 
 #show: thesis.with(
   title: "Thesis Title",

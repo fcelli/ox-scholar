@@ -1,4 +1,4 @@
-#import "@preview/ox-scholar:0.1.0": *
+#import "@preview/ox-scholar:0.1.1": *
 
 #show: thesis.with(
   title: "Thesis Title",
