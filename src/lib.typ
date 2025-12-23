@@ -1,8 +1,7 @@
 #import "title.typ": title-page
 #import "frontmatter.typ": frontmatter-page
 #import "bibliography.typ": bibliography-page
-#import "utils.typ": latest-heading, page-has-heading
-#import calc: even
+#import "utils.typ": make-footer, make-header
 
 #let thesis(
   title: none,
@@ -35,39 +34,8 @@
       top: 4cm,
       bottom: 2.5cm,
     ),
-    header: context {
-      let page-num = here().page()
-      let page-display-num = counter(page).display()
-      let has-h1 = page-has-heading(here())
-      if has-h1 {
-        return none
-      }
-      let latest-h1 = latest-heading(level: 1)
-      set text(style: "italic")
-      if even(page-num) {
-        set align(left)
-        page-display-num
-        if latest-h1 != none {
-          h(1fr)
-          latest-h1
-        }
-      } else {
-        set align(right)
-        if latest-h1 != none {
-          latest-h1
-        }
-        h(1fr)
-        page-display-num
-      }
-    },
-    footer: context {
-      let has-h1 = page-has-heading(here())
-      if not has-h1 { none } else {
-        set align(center)
-        set text(style: "italic")
-        counter(page).display()
-      }
-    },
+    header: make-header(),
+    footer: make-footer(),
   )
 
   set par(
