@@ -3,6 +3,7 @@
 #import "bibliography.typ": bibliography-page
 #import "utils.typ": make-footer, make-header
 
+/// Generates the thesis layout
 #let thesis(
   title: none,
   author: none,
@@ -14,6 +15,7 @@
   logo: none,
   show-toc: true,
   bib: none,
+  draft: false,
   body,
 ) = {
   // Validate inputs
@@ -42,6 +44,11 @@
     first-line-indent: 1.5em,
     justify: true,
     leading: 1.5em,
+  )
+
+  // Show line numbers if draft mode is enabled
+  set par.line(
+    numbering: if draft { "1" } else { none },
   )
 
   set text(
