@@ -3,7 +3,6 @@
     numbering: none,
     outlined: true,
   )
-  counter(heading).update(0)
 
   bib
 
