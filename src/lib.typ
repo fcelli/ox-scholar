@@ -69,35 +69,27 @@
 
   // Heading styling
   set heading(numbering: "1.1.1")
+  // Add some spacing above and below headings
   show heading: it => {
     v(1em)
     it
     v(1em)
   }
+  // Style level 1 headings
   show heading.where(level: 1): it => {
-    // Place level 1 headings on an odd page
+    // Place level 1 headings on a new odd page
     pagebreak(weak: true, to: "odd")
-    align(
-      right,
-      block[
-        #v(4cm)
-        #let num = counter(heading).get().at(0)
-        #if num > 0 {
-          set text(
-            size: 90pt,
-            weight: 900,
-            fill: gray,
-          )
-          num
-        } \
-        #set text(
-          size: 24pt,
-          weight: 100,
-        )
-        #it.body
-        #v(1em)
-      ],
-    )
+    set align(right)
+    v(2.5cm)
+    // Only show heading number if numbering is set
+    if it.numbering != none {
+      v(1.5cm)
+      let num = counter(heading).display()
+      text(size: 90pt, weight: 900, fill: gray)[#num]
+      linebreak()
+    }
+    text(size: 24pt, weight: 100)[#it.body]
+    v(1em)
   }
 
   // ============== Title page ==============
