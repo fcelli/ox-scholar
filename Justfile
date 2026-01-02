@@ -6,9 +6,10 @@ export TYPST_ROOT := root
 default:
   @just --list --unsorted
 
-# generate manual
+# generate docs
 doc:
   typst compile docs/thumbnail.typ thumbnail.png
+  typst compile docs/examples.typ examples/{0p}.png
 
 # run test suite
 test *args:

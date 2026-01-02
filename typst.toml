@@ -8,7 +8,15 @@ description = "Unofficial Oxford DPhil thesis template"
 repository = "https://github.com/fcelli/ox-scholar"
 keywords = ["Oxford", "thesis", "DPhil", "PhD"]
 categories = ["thesis"]
-exclude = [".github", "docs", "scripts", "tests", ".typstignore", "Justfile"]
+exclude = [
+    ".github",
+    "docs",
+    "scripts",
+    "tests",
+    ".typstignore",
+    "Justfile",
+    "examples",
+]
 
 [template]
 path = "template"
