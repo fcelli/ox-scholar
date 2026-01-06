@@ -5,6 +5,7 @@
 - feat: first line paragraph indentation
 - feat: option to enable line numbers
 - chore: improve level 1 heading styling logic
+- chore: improve default template content
 
 ## v0.1.1
 - fix: thumbnail appearance in typst universe
