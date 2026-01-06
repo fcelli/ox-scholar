@@ -6,7 +6,7 @@ export TYPST_ROOT := root
 default:
   @just --list --unsorted
 
-# generate manual
+# generate docs
 doc:
   typst compile docs/thumbnail.typ thumbnail.png
 

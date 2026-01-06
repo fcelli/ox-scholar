@@ -7,12 +7,18 @@
 
 Unofficial Typst template for an Oxford DPhil thesis.
 
+<p align="center">
+  <picture>
+    <img src="thumbnail.png" style="width: 300px; height: auto;">
+  </picture>
+</p>
+
 ## Getting Started
 To get started with Typst, please refer to the official [installation guide](https://github.com/typst/typst?tab=readme-ov-file#installation).
 
 Once the Typst CLI is installed on your system, you can set up a new project using this template:
 ```shell
-typst init @preview/ox-scholar:0.1.1
+typst init @preview/ox-scholar:0.2.0
 ```
 
 The template includes a pre-filled example demonstrating the basic layout. You can compile it to PDF with:
@@ -24,12 +30,6 @@ For live preview while editing:
 ```shell
 typst watch main.typ
 ```
-
-<p align="center">
-  <picture>
-    <img src="thumbnail.png" style="width: 500px; height: auto;">
-  </picture>
-</p>
 
 ### Thesis Function Documentation
 The template provides a `thesis()` function that generates the thesis layout. You can use it with the parameters in the table below.
@@ -51,7 +51,7 @@ The template provides a `thesis()` function that generates the thesis layout. Yo
 
 Example usage:
 ```typ
-#import "@preview/ox-scholar:0.1.1": *
+#import "@preview/ox-scholar:0.2.0": *
 
 #show: thesis.with(
   title: "Thesis Title",
