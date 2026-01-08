@@ -31,6 +31,8 @@ For live preview while editing:
 typst watch main.typ
 ```
 
+A preview of the latest version of the default template is available on the ox-scholar [wiki](https://github.com/fcelli/ox-scholar/wiki#gallery).
+
 ### Thesis Function Documentation
 The template provides a `thesis()` function that generates the thesis layout. You can use it with the parameters in the table below.
 
