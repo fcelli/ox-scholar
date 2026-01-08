@@ -1,9 +1,9 @@
 #import "title.typ": title-page
 #import "frontmatter.typ": frontmatter-page
 #import "bibliography.typ": bibliography-page
-#import "utils.typ": latest-heading, page-has-heading
-#import calc: even
+#import "utils.typ": make-footer, make-header
 
+/// Generates the thesis layout
 #let thesis(
   title: none,
   author: none,
@@ -15,6 +15,7 @@
   logo: none,
   show-toc: true,
   bib: none,
+  draft: false,
   body,
 ) = {
   // Validate inputs
@@ -35,44 +36,19 @@
       top: 4cm,
       bottom: 2.5cm,
     ),
-    header: context {
-      let page-num = here().page()
-      let page-display-num = counter(page).display()
-      let has-h1 = page-has-heading(here())
-      if has-h1 {
-        return none
-      }
-      let latest-h1 = latest-heading(level: 1)
-      set text(style: "italic")
-      if even(page-num) {
-        set align(left)
-        page-display-num
-        if latest-h1 != none {
-          h(1fr)
-          latest-h1
-        }
-      } else {
-        set align(right)
-        if latest-h1 != none {
-          latest-h1
-        }
-        h(1fr)
-        page-display-num
-      }
-    },
-    footer: context {
-      let has-h1 = page-has-heading(here())
-      if not has-h1 { none } else {
-        set align(center)
-        set text(style: "italic")
-        counter(page).display()
-      }
-    },
+    header: make-header(),
+    footer: make-footer(),
   )
 
   set par(
+    first-line-indent: 1.5em,
     justify: true,
     leading: 1.5em,
+  )
+
+  // Show line numbers if draft mode is enabled
+  set par.line(
+    numbering: if draft { "1" } else { none },
   )
 
   set text(
@@ -93,35 +69,27 @@
 
   // Heading styling
   set heading(numbering: "1.1.1")
+  // Add some spacing above and below headings
   show heading: it => {
     v(1em)
     it
     v(1em)
   }
+  // Style level 1 headings
   show heading.where(level: 1): it => {
-    // Place level 1 headings on an odd page
+    // Place level 1 headings on a new odd page
     pagebreak(weak: true, to: "odd")
-    align(
-      right,
-      block[
-        #v(4cm)
-        #let num = counter(heading).get().at(0)
-        #if num > 0 {
-          set text(
-            size: 90pt,
-            weight: 900,
-            fill: gray,
-          )
-          num
-        } \
-        #set text(
-          size: 24pt,
-          weight: 100,
-        )
-        #it.body
-        #v(1em)
-      ],
-    )
+    set align(right)
+    v(2.5cm)
+    // Only show heading number if numbering is set
+    if it.numbering != none {
+      v(1.5cm)
+      let num = counter(heading).display()
+      text(size: 90pt, weight: 900, fill: gray)[#num]
+      linebreak()
+    }
+    text(size: 24pt, weight: 100)[#it.body]
+    v(1em)
   }
 
   // ============== Title page ==============

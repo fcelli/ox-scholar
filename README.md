@@ -7,12 +7,18 @@
 
 Unofficial Typst template for an Oxford DPhil thesis.
 
+<p align="center">
+  <picture>
+    <img src="thumbnail.png" style="width: 300px; height: auto;">
+  </picture>
+</p>
+
 ## Getting Started
 To get started with Typst, please refer to the official [installation guide](https://github.com/typst/typst?tab=readme-ov-file#installation).
 
 Once the Typst CLI is installed on your system, you can set up a new project using this template:
 ```shell
-typst init @preview/ox-scholar:0.1.1
+typst init @preview/ox-scholar:0.2.0
 ```
 
 The template includes a pre-filled example demonstrating the basic layout. You can compile it to PDF with:
@@ -25,28 +31,29 @@ For live preview while editing:
 typst watch main.typ
 ```
 
-<p align="center">
-  <picture>
-    <img src="thumbnail.png" style="width: 500px; height: auto;">
-  </picture>
-</p>
+A preview of the latest version of the default template is available on the ox-scholar [wiki](https://github.com/fcelli/ox-scholar/wiki#gallery).
 
 ### Thesis Function Documentation
-The template provides a `thesis()` function that generates the thesis layout. You can configure it with your title, author, and other optional parameters.
-- `title`: The full title of the thesis.
-- `author`: The author's full name.
-- `college`: The author's college.
-- `degree`: The degree being pursued. Defaults to "Doctor of Philosophy".
-- `submission-term`: The term and year of submission (e.g., “Trinity Term, 2025”).
-- `acknowledgements`: Optional content for acknowledgements.
-- `abstract`: Optional content for the abstract section.
-- `logo`: Optional image for the university or college logo.
-- `show-toc`: Boolean to include the table of contents. Defaults to true.
-- `bib`: Optional bibliography.
+The template provides a `thesis()` function that generates the thesis layout. You can use it with the parameters in the table below.
+
+| Parameter |        Type       |        Description        | Default |
+|-----------|-------------------|---------------------------|---------|
+| `body`    | `content`         | The thesis content        |    —    |
+| `title`   | `content \| none` | Full title of the thesis  | `none`  |
+| `author`  | `content \| none` | Author’s full name        | `none`  |
+| `college` | `content \| none` | Author’s college          | `none`  |
+| `degree`  | `content`         | The degree being pursued  | `Doctor of Philosophy` |
+| `submission-term` | `content \| none` | The term and year of submission (e.g., “Trinity Term, 2025”) | `none` |
+| `acknowledgements` | `content \| none` | Content for the acknowledgements page | `none` |
+| `abstract` | `content \| none` | Content for the abstract page | `none` |
+| `logo`     | `image \| none`   | Image for the University or college logo | `none` |
+| `show-toc` | `bool`            | Whether to show the table of contents | `true` |
+| `bib`      | `content \| none` | Content for the bibliography | `none` |
+| `draft`    | `bool`            | Whether to show line numbers | `false` |
 
 Example usage:
 ```typ
-#import "@preview/ox-scholar:0.1.1": *
+#import "@preview/ox-scholar:0.2.0": *
 
 #show: thesis.with(
   title: "Thesis Title",
